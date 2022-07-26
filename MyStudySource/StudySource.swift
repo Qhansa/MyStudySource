@@ -8,7 +8,7 @@
 //import Foundation
 import SwiftUI
 
-struct StudySource {
-    var id = UUID()
-//    var
-}
+//struct StudySource {
+////    var id = UUID()
+////    var
+//}

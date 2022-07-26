@@ -14,13 +14,14 @@ struct MyStudySourceApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             NavigationView {
 //                StudySourceData()
                 Text("Select a StudySource")
-                    .foregroundColor(UIColor(named: "ColorDarkChoco"))
-            }.environmentObject(studyData)
+                    .foregroundColor(Color("ColorDarkChoco"))
+            }
+//            .environmentObject(studyData)
         }
     }
 }

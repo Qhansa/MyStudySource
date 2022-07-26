@@ -17,6 +17,7 @@
 		57224A2E288E47B8003260C1 /* MyStudySourceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A2D288E47B8003260C1 /* MyStudySourceUITests.swift */; };
 		57224A30288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */; };
 		574CAB3F288FB2720027E27D /* StudySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB3E288FB2720027E27D /* StudySource.swift */; };
+		574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB43289026F60027E27D /* StudySourceListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		57224A2D288E47B8003260C1 /* MyStudySourceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStudySourceUITests.swift; sourceTree = "<group>"; };
 		57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStudySourceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		574CAB3E288FB2720027E27D /* StudySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySource.swift; sourceTree = "<group>"; };
+		574CAB43289026F60027E27D /* StudySourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,9 @@
 		57224A0C288E47B5003260C1 /* MyStudySource */ = {
 			isa = PBXGroup;
 			children = (
+				574CAB42289026D80027E27D /* ViewModel */,
+				574CAB41289026C90027E27D /* View */,
+				574CAB40289026AB0027E27D /* Model */,
 				57224A0D288E47B5003260C1 /* MyStudySourceApp.swift */,
 				57224A0F288E47B5003260C1 /* ContentView.swift */,
 				57224A11288E47B8003260C1 /* Assets.xcassets */,
@@ -134,6 +139,28 @@
 				57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */,
 			);
 			path = MyStudySourceUITests;
+			sourceTree = "<group>";
+		};
+		574CAB40289026AB0027E27D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		574CAB41289026C90027E27D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				574CAB43289026F60027E27D /* StudySourceListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		574CAB42289026D80027E27D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +296,7 @@
 				57224A17288E47B8003260C1 /* Persistence.swift in Sources */,
 				57224A10288E47B5003260C1 /* ContentView.swift in Sources */,
 				57224A1A288E47B8003260C1 /* MyStudySource.xcdatamodeld in Sources */,
+				574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */,
 				574CAB3F288FB2720027E27D /* StudySource.swift in Sources */,
 				57224A0E288E47B5003260C1 /* MyStudySourceApp.swift in Sources */,
 			);
