@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct MyStudySourceApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
+//    @StateObject private var studyData = StudySourceData()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            NavigationView {
+//                StudySourceData()
+                Text("Select a StudySource")
+                    .foregroundColor(UIColor(named: "ColorDarkChoco"))
+            }.environmentObject(studyData)
         }
     }
 }
