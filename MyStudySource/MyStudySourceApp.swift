@@ -10,12 +10,14 @@ import SwiftUI
 @main
 struct MyStudySourceApp: App {
 //    let persistenceController = PersistenceController.shared
-//    @StateObject private var studyData = StudySourceData()
+    /// To View The Model
+    @StateObject private var studySourceViewModel = StudySourceViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, studySourceViewModel.container.viewContext)
             NavigationView {
 //                StudySourceData()
                 Text("Select a StudySource")

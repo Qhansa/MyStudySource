@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct StudySourceListView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+//    @State private var
+    
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
@@ -19,6 +23,16 @@ struct StudySourceListView: View {
 //            }
             
         }
+//        .navigationTitle("TEST")
+//        .toolbar {
+//            ToolbarItem {
+//                Button {
+//
+//                } label: {
+//                    Image(systemName: "plus")
+//                }
+//            }
+//        }
     }
 }
 

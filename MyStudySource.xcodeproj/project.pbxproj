@@ -18,6 +18,7 @@
 		57224A30288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */; };
 		574CAB3F288FB2720027E27D /* StudySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB3E288FB2720027E27D /* StudySource.swift */; };
 		574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB43289026F60027E27D /* StudySourceListView.swift */; };
+		574CAB4628902B3C0027E27D /* StudySourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB4528902B3C0027E27D /* StudySourceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStudySourceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		574CAB3E288FB2720027E27D /* StudySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySource.swift; sourceTree = "<group>"; };
 		574CAB43289026F60027E27D /* StudySourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceListView.swift; sourceTree = "<group>"; };
+		574CAB4528902B3C0027E27D /* StudySourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		574CAB42289026D80027E27D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				574CAB4528902B3C0027E27D /* StudySourceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				57224A17288E47B8003260C1 /* Persistence.swift in Sources */,
 				57224A10288E47B5003260C1 /* ContentView.swift in Sources */,
+				574CAB4628902B3C0027E27D /* StudySourceViewModel.swift in Sources */,
 				57224A1A288E47B8003260C1 /* MyStudySource.xcdatamodeld in Sources */,
 				574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */,
 				574CAB3F288FB2720027E27D /* StudySource.swift in Sources */,
