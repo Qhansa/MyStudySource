@@ -89,8 +89,37 @@ import CoreData
 
 /// =================================================
 
+// MARK - 1.4 CORE DATA: READING DATA AND WRITING IT TOO
+/// Reading data with Core Data is done with what's called effect request. We describe what we want, how much we sorted/filtered.
+/// And then Core Data sends us back  all the matching data for us to use.
+///
+/// Now we've got to make sure this fetch request stays up to date over time. So as soon objects are creatend or removed our UI stays sycnhrozied.
+///
+/// Now SwiftUI has a solution for this and it's another property wrapper, this time it's called `@FetchRequest` and takes at least one parameter describing "How we want sorting to happen?". It has quite a specific format. --> Go to `ContentView.swift` file.
 struct ContentView: View {
+    // MARK - 1.4a CORE DATA: ADDING A PROPERTY
+    @FetchRequest(sortDescriptors: []) var sources: FetchedResults<StudySources>
+    /// EXPLANATION
+    /// - `@FetchRequest` with no sorting, just give it to me in a random whatever you feel like order, then put into your propoerty called Sources with the type  `FetchResults` of the students.
+    ///
+    /// And from there, we can go ahead and use students like a regular swift array. But there's one catch as you'll see.
+    
+    // MARK 1.4b CORE DATA:
+    /// In our body there's a v stack
+    
     var body: some View {
+        VStack {
+            List(sources){ source in
+                Text(source.name ?? "Unknown")
+                /// The `source.name` is one area of core data that will greatly annoy you because it has the concept of optional data. It knows optionals are.
+                ///
+                /// But it's entirely different concept from SwiftUI optionals. They're two different things under the same name `optional`. They mean different things.
+                ///
+                /// If we set a Core Data, this thing can't be optional like `name`,  cannot be optional -- must be required. It will still generate optional swift porperties.
+                ///
+                /// Student.name will still be a swift optional even though Core Data has not optional. Because all Core Data cares about is that the properties have values and when they're save, so they're optional in swift for the entire lifetime no matter what you do.
+            }
+        }
         NavigationView {
             Text("HALO")
 //                .foregroundColor(Color("ColorCream"))
