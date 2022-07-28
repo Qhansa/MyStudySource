@@ -22,16 +22,53 @@ struct StudySourceDetailView: View {
             Section {
                 TextField("Topic Name", text: $studySource.topic)
                     .font(.title2)
+                
+                
             }
             
             Section {
                 Text("URLs")
-                    .fontWeight(.bold)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("ColorDarkChoco"))
                 
                 ForEach($studySource.urls) { $item in
-//                    URLRowView
+                    URLRowView(url: $item, focusedURL: $focusedURL)
                 }
+                
+                .onDelete { indexSet in
+                    studySource.urls.remove(atOffsets: indexSet)
+                }
+                
+                Button {
+                    let newURL = StudySourceURL(text: "")
+                    studySource.urls.append(newURL)
+                    focusedURL = newURL
+                } label: {
+                    HStack {
+                        Image(systemName: "plus")
+    //                            .foregroundColor(Color("ColorDarkChoco"))
+                        Text("Add URL")
+    //                            .foregroundColor(Color("ColorDarkChoco"))
+                    }
+                }
+                .buttonStyle(.borderless)
             }
+            
+            if !isNew {
+                Button(role: .destructive) {
+                    isDeleted = true
+                    dismiss()
+                    studySourceViewModel.delete(studySource)
+                } label: {
+                    Text("Delete Topic")
+                        .font(Font.custom("SF Pro", size: 17))
+                        .foregroundColor(Color(UIColor.systemRed))
+                }
+                .frame(minWidth: .infinity, alignment: .center)
+
+            }
+            
+            
 //            Text("THIS IS THE STUDY SOURCE DETAIL VIEW")
         }
     }
