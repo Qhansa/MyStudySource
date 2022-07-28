@@ -18,7 +18,16 @@ struct StudySourceListView: View {
     var body: some View {
         List {
             Section {
-
+                ForEach(studySourceViewModel.studySources) {
+                    studySource in
+                    NavigationLink {
+                        StudySourceEditorView(studySource: studySource, isNew: false)
+                    } label: {
+                        VStack {
+                            Text("\(studySource.topic)")
+                        }
+                    }
+                }
             }
         }
         .navigationTitle("My StudySource")
@@ -34,7 +43,7 @@ struct StudySourceListView: View {
         }
         .sheet(isPresented: $isAddingNewStudySource) {
             NavigationView {
-                StudySourceEditorView(studySource: $newStudySource, isNew: true)
+                StudySourceEditorView(studySource: newStudySource, isNew: true)
             }
         }
     }

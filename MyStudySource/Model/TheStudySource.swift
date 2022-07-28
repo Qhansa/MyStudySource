@@ -8,12 +8,17 @@
 //import Foundation
 import SwiftUI
 
-struct TheStudySource: Identifiable, Hashable {
-    var id = UUID()
-    var topic = ""
-    var category = ""
-    var urls = [StudySourceURL(text: "")]
-    var notes = ""
+class TheStudySource: Identifiable, Equatable, ObservableObject {
+    static func == (lhs: TheStudySource, rhs: TheStudySource) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    
+    let id = UUID()
+    @Published var topic = ""
+    @Published var category = ""
+    @Published var urls = [StudySourceURL(text: "")]
+    @Published var notes = ""
     
 //    var isIOSDevelopment: Bool {
 //        
@@ -31,6 +36,18 @@ struct TheStudySource: Identifiable, Hashable {
         notes: "Core Data is Like an SQL for iOS"
     )
     
+    init()
+    {
+        
+    }
+    
+    init(topic: String, category: String, urls: [StudySourceURL], notes: String)
+    {
+        self.topic = topic
+        self.category = category
+        self.urls = urls
+        self.notes = notes
+    }
     
 }
 

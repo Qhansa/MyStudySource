@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StudySourceDetailView: View {
-    @Binding var studySource: TheStudySource
+    @ObservedObject var studySource: TheStudySource
     @Binding var isDeleted: Bool
     @Binding var isNew: Bool
     
@@ -23,7 +23,7 @@ struct StudySourceDetailView: View {
                 Section {
                     TextField("Topic Name", text: $studySource.topic)
                 } header: {
-                    Text("New StudySource")
+                    Text("New Study Source")
                         .fontWeight(.bold)
                         .font(.title)
                         .foregroundColor(Color("ColorBlack"))
@@ -59,6 +59,9 @@ struct StudySourceDetailView: View {
                 
                 Section {
                     TextField("Write something here", text: $studySource.notes)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(nil)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 } header: {
                     Text("Notes")
                         .fontWeight(.bold)
@@ -87,6 +90,6 @@ struct StudySourceDetailView: View {
 
 struct StudySourceDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        StudySourceDetailView(studySource: .constant(TheStudySource.example), isDeleted: .constant(false), isNew: .constant(false))
+        StudySourceDetailView(studySource: TheStudySource.example, isDeleted: .constant(false), isNew: .constant(false))
     }
 }

@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct StudySourceEditorView: View {
-    @Binding var studySource: TheStudySource
+    @ObservedObject var studySource: TheStudySource
     @State var isNew = false
     
     @State private var isDeleted = false
     @EnvironmentObject var studySourceViewModel: StudySourceViewModel
     @Environment(\.dismiss) private var dismiss
     
-    @State private var studySourceCopy = TheStudySource()
+//    @State private var studySourceCopy = TheStudySource()
     
     private var isStudySourceDeleted: Bool {
-        !studySourceViewModel.exists(studySourceCopy) && !isNew
+        !studySourceViewModel.exists(studySource) && !isNew
     }
     
     var body: some View {
         VStack {
-            StudySourceDetailView(studySource: $studySourceCopy, isDeleted: $isDeleted, isNew: $isNew)
+            StudySourceDetailView(studySource: studySource, isDeleted: $isDeleted, isNew: $isNew)
+            
+//                .onAppear {
+//                    studySourceCopy = studySource
+//                }
+//                .onChange(of: studySourceCopy) { _ in
+//                    if !isDeleted {
+//                        studySource = studySourceCopy
+//                    }
+//                }
+            
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         if isNew {
@@ -37,21 +47,13 @@ struct StudySourceEditorView: View {
                         Button {
                             if isNew {
                                 studySourceViewModel.studySources
-                                    .append(studySourceCopy)
+                                    .append(studySource)
                                 dismiss()
                             }
                         } label: {
                             Text(isNew ? "Add" : "")
                         }
-                        .disabled(studySourceCopy.topic.isEmpty)
-                    }
-                }
-                .onAppear {
-                    studySourceCopy = studySource
-                }
-                .onChange(of: studySourceCopy) { _ in
-                    if !isDeleted {
-                        studySource = studySourceCopy
+                        .disabled(studySource.topic.isEmpty)
                     }
                 }
         }
@@ -68,7 +70,7 @@ struct StudySourceEditorView: View {
 struct StudySourceEditorView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            StudySourceEditorView(studySource: .constant(TheStudySource()), isNew: true)
+            StudySourceEditorView(studySource: TheStudySource.example, isNew: true)
                 .environmentObject(StudySourceViewModel())
         }
     }
