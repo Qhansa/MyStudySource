@@ -17,9 +17,9 @@ struct MyStudySourceApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
             // MARK - 1.3 CORE DATA: PUT THE INSTANCE OF THE STUDYSOURCEVIEWMODEL INTO THE SWIFTUI ENVIRONMENT BY ADDING A NEW MODIFIER TO THE STUDYSOURCELISTVIEW.SWIFT
-                .environment(\.managedObjectContext, studySourceViewModel.container.viewContext)
+//                .environment(\.managedObjectContext, studySourceViewModel.container.viewContext)
             /// CODE EXPLANATION
             /// - `.managedObjectContext`: this is the live versions of your data when you load data and you change data somehow, those only exist in memory, until you specifically say "I'm done know, write it back to the persistent store, to the iPhone ssd , whatever you're using right"
             /// - `.viewContect`: So the job for ViewContent is to let us work with data in memory which is much faster than working within on disk all the time alyways reeading and writing objects. So we'll load it once work with the memory modify as much as you want tto, and then write out only when you're ready.
@@ -36,12 +36,15 @@ struct MyStudySourceApp: App {
             /// Now we've got to make sure this fetch request stays up to date over time. So as soon objects are creatend or removed our UI stays sycnhrozied.
             ///
             /// Now SwiftUI has a solution for this and it's another property wrapper, this time it's called `@FetchRequest` and takes at least one parameter describing "How we want sorting to happen?". It has quite a specific format. --> Go to `ContentView.swift` file.
+            
+            
             NavigationView {
-//                StudySourceData()
+                StudySourceListView()
                 Text("Select a StudySource")
-                    .foregroundColor(Color("ColorDarkChoco"))
+//                    .foregroundColor(Color("ColorDarkChoco"))
+                    .foregroundColor(.secondary)
             }
-//            .environmentObject(studyData)
+            .environmentObject(studySourceViewModel)
         }
     }
 }

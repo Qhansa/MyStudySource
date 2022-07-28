@@ -16,9 +16,13 @@
 		57224A24288E47B8003260C1 /* MyStudySourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A23288E47B8003260C1 /* MyStudySourceTests.swift */; };
 		57224A2E288E47B8003260C1 /* MyStudySourceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A2D288E47B8003260C1 /* MyStudySourceUITests.swift */; };
 		57224A30288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */; };
-		574CAB3F288FB2720027E27D /* StudySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB3E288FB2720027E27D /* StudySource.swift */; };
+		574CAB3F288FB2720027E27D /* TheStudySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB3E288FB2720027E27D /* TheStudySource.swift */; };
 		574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB43289026F60027E27D /* StudySourceListView.swift */; };
 		574CAB4628902B3C0027E27D /* StudySourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAB4528902B3C0027E27D /* StudySourceViewModel.swift */; };
+		575F6518289225FD0098BB43 /* StudySourceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F6517289225FD0098BB43 /* StudySourceURL.swift */; };
+		575F651A2892336C0098BB43 /* StudySourceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F65192892336C0098BB43 /* StudySourceEditorView.swift */; };
+		575F651C289241C00098BB43 /* StudySourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F651B289241C00098BB43 /* StudySourceDetailView.swift */; };
+		575F651E289249780098BB43 /* URLRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F651D289249780098BB43 /* URLRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +55,13 @@
 		57224A29288E47B8003260C1 /* MyStudySourceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStudySourceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57224A2D288E47B8003260C1 /* MyStudySourceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStudySourceUITests.swift; sourceTree = "<group>"; };
 		57224A2F288E47B8003260C1 /* MyStudySourceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStudySourceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		574CAB3E288FB2720027E27D /* StudySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySource.swift; sourceTree = "<group>"; };
+		574CAB3E288FB2720027E27D /* TheStudySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheStudySource.swift; sourceTree = "<group>"; };
 		574CAB43289026F60027E27D /* StudySourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceListView.swift; sourceTree = "<group>"; };
 		574CAB4528902B3C0027E27D /* StudySourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceViewModel.swift; sourceTree = "<group>"; };
+		575F6517289225FD0098BB43 /* StudySourceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceURL.swift; sourceTree = "<group>"; };
+		575F65192892336C0098BB43 /* StudySourceEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceEditorView.swift; sourceTree = "<group>"; };
+		575F651B289241C00098BB43 /* StudySourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySourceDetailView.swift; sourceTree = "<group>"; };
+		575F651D289249780098BB43 /* URLRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +121,6 @@
 				57224A16288E47B8003260C1 /* Persistence.swift */,
 				57224A18288E47B8003260C1 /* MyStudySource.xcdatamodeld */,
 				57224A13288E47B8003260C1 /* Preview Content */,
-				574CAB3E288FB2720027E27D /* StudySource.swift */,
 			);
 			path = MyStudySource;
 			sourceTree = "<group>";
@@ -146,6 +153,8 @@
 		574CAB40289026AB0027E27D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				575F6517289225FD0098BB43 /* StudySourceURL.swift */,
+				574CAB3E288FB2720027E27D /* TheStudySource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				574CAB43289026F60027E27D /* StudySourceListView.swift */,
+				575F65192892336C0098BB43 /* StudySourceEditorView.swift */,
+				575F651B289241C00098BB43 /* StudySourceDetailView.swift */,
+				575F651D289249780098BB43 /* URLRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,10 +310,14 @@
 			files = (
 				57224A17288E47B8003260C1 /* Persistence.swift in Sources */,
 				57224A10288E47B5003260C1 /* ContentView.swift in Sources */,
+				575F651A2892336C0098BB43 /* StudySourceEditorView.swift in Sources */,
 				574CAB4628902B3C0027E27D /* StudySourceViewModel.swift in Sources */,
 				57224A1A288E47B8003260C1 /* MyStudySource.xcdatamodeld in Sources */,
+				575F6518289225FD0098BB43 /* StudySourceURL.swift in Sources */,
 				574CAB44289026F60027E27D /* StudySourceListView.swift in Sources */,
-				574CAB3F288FB2720027E27D /* StudySource.swift in Sources */,
+				575F651E289249780098BB43 /* URLRowView.swift in Sources */,
+				574CAB3F288FB2720027E27D /* TheStudySource.swift in Sources */,
+				575F651C289241C00098BB43 /* StudySourceDetailView.swift in Sources */,
 				57224A0E288E47B5003260C1 /* MyStudySourceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -443,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
