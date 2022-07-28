@@ -18,53 +18,70 @@ struct StudySourceDetailView: View {
     @FocusState var focusedURL: StudySourceURL?
     
     var body: some View {
-        List {
-            Section {
-                TextField("Topic Name", text: $studySource.topic)
-                    .font(.title2)
-            }
-            
-            Section {
-                Text("URLs")
+        VStack {
+            List {
+                Section {
+                    TextField("Topic Name", text: $studySource.topic)
+                } header: {
+                    Text("New StudySource")
                         .fontWeight(.bold)
-                        .foregroundColor(Color("ColorDarkChoco"))
-                
-                ForEach($studySource.urls) { $item in
-                    URLRowView(url: $item, focusedURL: $focusedURL)
+                        .font(.title)
+                        .foregroundColor(Color("ColorBlack"))
+                        .padding(.bottom, 5)
                 }
                 
-                .onDelete { indexSet in
-                    studySource.urls.remove(atOffsets: indexSet)
-                }
-                
-                Button {
-                    let newURL = StudySourceURL(text: "")
-                    studySource.urls.append(newURL)
-                    focusedURL = newURL
-                } label: {
-                    HStack {
-                        Image(systemName: "plus")
-    //                            .foregroundColor(Color("ColorDarkChoco"))
-                        Text("Add URL")
-    //                            .foregroundColor(Color("ColorDarkChoco"))
+                Section {
+                    ForEach($studySource.urls) { $item in
+                        URLRowView(url: $item, focusedURL: $focusedURL)
                     }
+                    
+                    .onDelete { indexSet in
+                        studySource.urls.remove(atOffsets: indexSet)
+                    }
+                    
+                    Button {
+                        let newURL = StudySourceURL(text: "")
+                        studySource.urls.append(newURL)
+                        focusedURL = newURL
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add URL")
+                        }
+                    }
+                    .buttonStyle(.borderless)
+                } header: {
+                    Text("URLs")
+                        .fontWeight(.bold)
+                        .font(.title3)
+                        .foregroundColor(Color("ColorDarkChoco"))
                 }
-                .buttonStyle(.borderless)
-            }
-            
-            if !isNew {
-                Button(role: .destructive) {
-                    isDeleted = true
-                    dismiss()
-                    studySourceViewModel.delete(studySource)
-                } label: {
-                    Text("Delete Topic")
-                        .font(Font.custom("SF Pro", size: 17))
-                        .foregroundColor(Color(UIColor.systemRed))
+                
+                Section {
+                    TextField("Write something here", text: $studySource.notes)
+                } header: {
+                    Text("Notes")
+                        .fontWeight(.bold)
+                        .font(.title3)
+                        .foregroundColor(Color("ColorDarkChoco"))
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
+                
+                if !isNew {
+                    Button(role: .destructive) {
+                        isDeleted = true
+                        dismiss()
+                        studySourceViewModel.delete(studySource)
+                    } label: {
+                        Text("Delete Topic")
+                            .font(Font.custom("SF Pro", size: 17))
+                            .foregroundColor(Color(UIColor.systemRed))
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                }
             }
         }
+        
+        
     }
 }
 

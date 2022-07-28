@@ -37,25 +37,6 @@ struct StudySourceListView: View {
                 StudySourceEditorView(studySource: $newStudySource, isNew: true)
             }
         }
-        
-//        List {
-//            Text("iOS Development")
-//            Text("Machine Learning")
-//            ForEach {
-//
-//            }
-            
-//        }
-//        .navigationTitle("TEST")
-//        .toolbar {
-//            ToolbarItem {
-//                Button {
-//
-//                } label: {
-//                    Image(systemName: "plus")
-//                }
-//            }
-//        }
     }
 }
 

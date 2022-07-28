@@ -67,31 +67,30 @@ class StudySourceViewModel: ObservableObject {
         studySources.contains{ $0.id == studySource.id }
     }
     
-    func sortedStudySources(category: Category) -> Binding<[TheStudySource]> {
-        Binding<[TheStudySource]>(
-            get: {
-                self.studySources
-                    .filter {_ in
-                        switch category {
-                        case .iOSDevelopment:
-                            return $0.isIOSDevelopment
-                        case .MachineLearning:
-                            return $0.isMachineLearning
-                        }
-                    }
-            },
-            set: { studySources in
-                for studySource in studySources {
-                    if let index = self.studySources.firstIndex(where: {$0.id == studySource.id}) {
-                        self.studySources[index] = studySource
-                    }
-                    
-                }
-                
-            }
-            
-        )
-    }
+//    func sortedStudySources(category: Category) -> Binding<[TheStudySource]> {
+//        Binding<[TheStudySource]>(
+//            get: {
+//                self.studySources
+//                    .filter {
+//                        switch category {
+//                        case .iOSDevelopment:
+//                            return print("$0.isIOSDevelopment")
+//                        case .MachineLearning:
+//                            return print("$0.isMachineLearning")
+//                        }
+//                    }
+//            },
+//            set: { studySources in
+//                for studySource in studySources {
+//                    if let index = self.studySources.firstIndex(where: {$0.id == studySource.id}) {
+//                        self.studySources[index] = studySource
+//                    }
+//                }
+//
+//            }
+//
+//        )
+//    }
 }
 
 enum Category: String, CaseIterable, Identifiable {
