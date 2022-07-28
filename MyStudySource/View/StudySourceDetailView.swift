@@ -22,8 +22,6 @@ struct StudySourceDetailView: View {
             Section {
                 TextField("Topic Name", text: $studySource.topic)
                     .font(.title2)
-                
-                
             }
             
             Section {
@@ -64,12 +62,8 @@ struct StudySourceDetailView: View {
                         .font(Font.custom("SF Pro", size: 17))
                         .foregroundColor(Color(UIColor.systemRed))
                 }
-                .frame(minWidth: .infinity, alignment: .center)
-
+                .frame(maxWidth: .infinity, alignment: .center)
             }
-            
-            
-//            Text("THIS IS THE STUDY SOURCE DETAIL VIEW")
         }
     }
 }

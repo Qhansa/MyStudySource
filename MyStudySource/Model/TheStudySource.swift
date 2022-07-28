@@ -16,14 +16,12 @@ struct TheStudySource: Identifiable, Hashable {
     var notes = ""
     
     static var example = TheStudySource(
-        topic: "Core Data",
+        topic: "Core Data Example",
         category: "iOS Development",
         urls: [StudySourceURL(text: "https://youtu.be/O7u9nYWjvKk"),
                StudySourceURL(text: "https://youtu.be/bvm3ZLmwOdU")],
         notes: "Core Data is Like an SQL for iOS"
     )
-    
-    
 }
 
 

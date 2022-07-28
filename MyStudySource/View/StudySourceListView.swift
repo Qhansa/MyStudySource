@@ -10,18 +10,16 @@ import SwiftUI
 struct StudySourceListView: View {
 //    @Environment(\.managedObjectContext) var managedObjectContext
     
+//    @Binding var studySource: TheStudySource
     @EnvironmentObject var studySourceViewModel: StudySourceViewModel
     @State private var isAddingNewStudySource = false
     @State private var newStudySource = TheStudySource()
     
     var body: some View {
         List {
-//            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//                .foregroundColor(Color("ColorDarkChoco"))
-//            Text("Hello, World!")
-//                .foregroundColor(Color("ColorDarkChoco"))
-//            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//                .foregroundColor(Color("ColorDarkChoco"))
+            Section {
+
+            }
         }
         .navigationTitle("My StudySource")
         .toolbar {
